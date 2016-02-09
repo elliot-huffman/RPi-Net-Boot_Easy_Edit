@@ -1,16 +1,30 @@
 #!/bin/bash
 
+pause () {
+  echo "Press any key to continue..."
+  read -n 1
+}
+
 servermode () {
   chown root:root -R /var/lib/tftpboot/
   chown root:root -R /var/www/html/
   chmod 755 -R /var/lib/tftpboot/
   chmod 755 -R /var/www/html/
+  echo "Server mode enabled!"
+  echo ""
+  pause
+  clear
   mainmenu
   }
 
 editmode () {
   chown elliot:elliot -R /var/www/html/
   chown elliot:elliot -R /var/lib/tftpboot/
+  clear
+  echo "Edit mode enabled!"
+  echo ""
+  pause
+  clear
   mainmenu
   }
 
@@ -41,8 +55,7 @@ mainmenu () {
             echo "You have entered an invallid selection!"
             echo "Please try again!"
             echo ""
-            echo "Press any key to continue..."
-            read -n 1
+            pause
             clear
             mainmenu
         fi
