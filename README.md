@@ -1,4 +1,4 @@
-# RPi-Net-Boot_Easy_Edit
+# Raspberry Pi Network Boot Easy Edit
 A script to make editing the served files easier.
 
 This project was creeated to make file editing on my raspberry Pi 2 B boot server easier.
