@@ -10,23 +10,25 @@ servermode () {
   chown root:root -R /var/www/html/
   chmod 755 -R /var/lib/tftpboot/
   chmod 755 -R /var/www/html/
+  service vsftpd stop
   echo "Server mode enabled!"
   echo ""
   pause
   clear
   mainmenu
-  }
+}
 
 editmode () {
   chown elliot:elliot -R /var/www/html/
   chown elliot:elliot -R /var/lib/tftpboot/
+  service vsftpd start
   clear
   echo "Edit mode enabled!"
   echo ""
   pause
   clear
   mainmenu
-  }
+}
 
 quitprogram () {
   clear
