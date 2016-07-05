@@ -8,6 +8,7 @@ pause () {
 servermode () {
   chown root:root -R /var/lib/tftpboot/
   chown root:root -R /var/www/html/
+  chown mdtuser:mdtuser -R /ELADS
   chmod 755 -R /var/lib/tftpboot/
   chmod 755 -R /var/www/html/
   service vsftpd stop
@@ -21,6 +22,7 @@ servermode () {
 editmode () {
   chown elliot:elliot -R /var/www/html/
   chown elliot:elliot -R /var/lib/tftpboot/
+  chown elliot:elliot -R /ELADS
   service vsftpd start
   clear
   echo "Edit mode enabled!"
