@@ -12,6 +12,7 @@ servermode () {
   chmod 755 -R /var/lib/tftpboot/
   chmod 755 -R /var/www/html/
   service vsftpd stop
+  systemctl stop syncthing@elliot.service
   echo "Server mode enabled!"
   echo ""
   pause
@@ -24,6 +25,7 @@ editmode () {
   chown elliot:elliot -R /var/lib/tftpboot/
   chown elliot:elliot -R /ELADS
   service vsftpd start
+  systemctl start syncthing@elliot.service
   clear
   echo "Edit mode enabled!"
   echo ""
