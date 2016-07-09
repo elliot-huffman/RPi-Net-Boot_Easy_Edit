@@ -41,6 +41,7 @@ quitprogram () {
   }
 
 mainmenu () {
+  clear
   echo "Press 1 to enable edit mode"
   echo "Press 2 to enable server mode"
   echo "Press x to exit the script"
