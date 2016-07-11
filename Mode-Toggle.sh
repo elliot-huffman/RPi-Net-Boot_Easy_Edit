@@ -8,10 +8,10 @@ pause () {
 servermode () {
   chown root:root -R /var/lib/tftpboot/
   chown root:root -R /var/www/html/
-  chown mdtuser:mdtuser -R /ELADS
+  chown mdtuser:mdtuser -R /ELADS/
   chmod 755 -R /var/lib/tftpboot/
   chmod 755 -R /var/www/html/
-  service vsftpd stop
+  chmod 755 -R /ELADS/
   systemctl stop syncthing@elliot.service
   echo "Server mode enabled!"
   echo ""
@@ -23,8 +23,7 @@ servermode () {
 editmode () {
   chown elliot:elliot -R /var/www/html/
   chown elliot:elliot -R /var/lib/tftpboot/
-  chown elliot:elliot -R /ELADS
-  service vsftpd start
+  chown elliot:elliot -R /ELADS/
   systemctl start syncthing@elliot.service
   clear
   echo "Edit mode enabled!"
@@ -33,6 +32,7 @@ editmode () {
   clear
   mainmenu
 }
+
 
 quitprogram () {
   clear
